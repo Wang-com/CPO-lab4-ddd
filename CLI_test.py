@@ -1,4 +1,4 @@
-from CLI import *
+from CLI import version, PATH, Help, cat, read, hex
 import unittest
 import sys
 import os
@@ -49,7 +49,7 @@ class TestMutableList(unittest.TestCase):
         f1.close()
 
     def test_cat_a(self):
-        add_content = 'JG BEAT'
+        add_content = 'cpo-ddd'
         lst = ['cat', 'a', '1.txt', add_content]
         f1 = open('1.txt')
         original_content = f1.read()
