@@ -4,7 +4,7 @@ cli = CLIDecorator("Welcome to CLI_api.")
 
 
 @cli.command
-@cli.option('-v', default=None, Help='vision')
+@cli.option('-v', default=None, Help='version')
 @cli.option('-h', default=None, Help='help information')
 @cli.option('PATH', default=' ', Help='get the file\'s path')
 @cli.option('-r', default='1.txt', Help='read file')
