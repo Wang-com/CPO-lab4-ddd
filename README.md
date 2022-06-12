@@ -1,32 +1,32 @@
-# GROUP-NAME - lab NUMBER - variant NUMBER
-
-This is an example project which demonstrates project structure and necessary
-CI checks. It is not the best structure for real-world projects, but good
-enough for educational purposes.
+# GROUP-ddd - lab 4 - variant 3
 
 ## Project structure
 
-- `foo.py` -- implementation of `Foo` class with `hello` and `add` features.
-   Stateless.
-- `foo_test.py` -- unit and PBT tests for `Foo`.
+- `CLI.py` -- Complete various functions.
+- `CLI_test.py` -- unit and PBT tests for `CLI`.
+- `CLI_api.py` -- Interface.
 
 ## Features
 
-- PBT: `test_add_commutative`
+- support of flags with default values (python3 --version, python3 -V, python -v);
+- support of position arguments (python3 module.py, cat file1 file2);
+- support named arguments with default values (python3 -m module_name);
+- support of sub-commands with a different set of arguments
+  (e.g., git have subcommands git add, git status, git log);
+
+- automatic help and error message generation;
+- support type conversation for arguments value
+  (e.g., head -n 5 conversation string “5” to int value 5);
 
 ## Contribution
 
-- Aleksandr Penskoi (EMAIL) -- all work.
+- Wang Qihang -- CLI.py
+- Wang Zehao -- CLI_api.py,CLI_test.py
 
 ## Changelog
 
-- 29.03.2022 - 2
-  - Add test coverage.
-- 29.03.2022 - 1
-  - Update README. Add formal sections.
-- 29.03.2022 - 0
+- 12.06.2022 - 1
+  - Wang Qihang upload CLI.py
+  - Wang Zehao upload CLI_api.py,CLI_test.py
+- 12.06.2022 - 0
   - Initial
-
-## Design notes
-
-- ...
