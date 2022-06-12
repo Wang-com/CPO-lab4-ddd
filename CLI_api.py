@@ -1,5 +1,4 @@
 from CLI import CLIDecorator
-import os
 
 cli = CLIDecorator("Welcome to CLI_api.")
 
