@@ -3,7 +3,7 @@
 ## Project structure
 
 - `CLI.py` -- Complete various functions.
-- `CLI_test.py` -- unit and PBT tests for `CLI`.
+- `CLI_test.py` -- unit tests for `CLI`.
 - `CLI_api.py` -- Interface.
 
 ## Features
