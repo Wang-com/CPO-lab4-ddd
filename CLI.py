@@ -8,6 +8,7 @@ def version():
     """
     Function description: Output version information
     """
+    Help("usage-version")
     ver = sys.version
     print(ver)
     return ver
@@ -18,6 +19,7 @@ def PATH(s: str) -> str:
     Function description: Output the path of the specified file
     :param s: Command entered
     """
+    Help("PATH")
     path = os.getcwd()
     ret = path + '\\' + s
     print(ret)
@@ -30,8 +32,12 @@ def Help(s: str) -> str:
     :param s: Command entered
     """
     if s in ['usage',
+             'usage-version',
+             'read',
              'sub_commands',
              'position_arguments',
+             'hex',
+             'PATH',
              'named_arguments']:
         ret = s + ': '
         if s == 'usage':
@@ -39,6 +45,9 @@ def Help(s: str) -> str:
                               '[-h] [PATH] ' \
                               '[-r][cat a|n|d] ' \
                               '[-hex]'
+        elif s == 'usage-version':
+            ret = ret + '\n get version information' \
+                              ' \n usage: python  .\CLI_api.py [--version | -V |-v ] \n'
         elif s == 'sub_commands':
             ret = ret + '\n cat a: add data to the file' \
                               ' \n cat n: create a new file\n' \
@@ -46,6 +55,17 @@ def Help(s: str) -> str:
         elif s == 'position_arguments':
             ret = ret + '\n PATH : Print the ' \
                               'absolute path of the file'
+        elif s == 'PATH':
+            ret = ret + '\n Print the absolute path of the file' \
+                              ' \n usage: python  .\CLI_api.py PATH filename\n'
+        elif s == 'read':
+            ret = ret + '\nRead the contents in the file \n' \
+                              'usage: python  .\CLI_api.py -r filename\n'
+
+        elif s == 'hex':
+            ret = ret + 'Change the input value ' \
+                              'to hex and save it to the hex.txt'\
+                              '\nusage: python  .\CLI_api.py -hex \n'
         elif s == 'named_arguments':
             ret = ret + '\n --version : Show the current ' \
                               'command_line interface version(also -v -V) \n' \
@@ -67,6 +87,7 @@ def cat(s: List) -> None:
             cat d: Download files via http
     :param s: Command entered
     """
+    Help("sub_commands")
     while len(s) > 0 and s[0] in ['n', 'a', 'd']:
         if s[0] == 'n':
             s.pop(0)
@@ -90,6 +111,7 @@ def read(s: str) -> List[str]:
     Function description: Read the contents in the file
     :param s: Command entered
     """
+    Help("read")
     with open(s) as f:
         lines = f.readlines()
         for i in lines:
@@ -103,6 +125,7 @@ def hex(s: str) -> str:
     value to hex and save it to the hex.txt
     :param s: Command entered
     """
+    Help("hex")
     res = ""
     hex1 = ['0', '1', '2', '3', '4', '5', '6',
             '7', '8', '9', 'a', 'b', 'c', 'd',
@@ -172,6 +195,8 @@ class CLIDecorator(object):
                  func_name: str,
                  default=None,
                  Help=None) -> Callable:
+
+
         """
         Pass a simple variable value
         :param func_name: str
