@@ -25,6 +25,8 @@
 
 ## Changelog
 
+- 19.06.2022 - 2
+  - Add help information to the function, and automatically generate help messages according to the input
 - 12.06.2022 - 1
   - Wang Qihang upload CLI.py
   - Wang Zehao upload CLI_api.py,CLI_test.py
