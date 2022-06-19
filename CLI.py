@@ -47,7 +47,7 @@ def Help(s: str) -> str:
                               '[-hex]'
         elif s == 'usage-version':
             ret = ret + '\n get version information' \
-                              ' \n usage: python  .\CLI_api.py [--version | -V |-v ] \n'
+                              ' \nusage:python CLI_api.py [--version | -V |-v ]\n'
         elif s == 'sub_commands':
             ret = ret + '\n cat a: add data to the file' \
                               ' \n cat n: create a new file\n' \
@@ -57,15 +57,15 @@ def Help(s: str) -> str:
                               'absolute path of the file'
         elif s == 'PATH':
             ret = ret + '\n Print the absolute path of the file' \
-                              ' \n usage: python  .\CLI_api.py PATH filename\n'
+                              ' \n usage: python CLI_api.py PATH filename\n'
         elif s == 'read':
             ret = ret + '\nRead the contents in the file \n' \
-                              'usage: python  .\CLI_api.py -r filename\n'
+                              'usage: python CLI_api.py -r filename\n'
 
         elif s == 'hex':
             ret = ret + 'Change the input value ' \
                               'to hex and save it to the hex.txt'\
-                              '\nusage: python  .\CLI_api.py -hex \n'
+                              '\nusage: python CLI_api.py -hex \n'
         elif s == 'named_arguments':
             ret = ret + '\n --version : Show the current ' \
                               'command_line interface version(also -v -V) \n' \
@@ -195,8 +195,6 @@ class CLIDecorator(object):
                  func_name: str,
                  default=None,
                  Help=None) -> Callable:
-
-
         """
         Pass a simple variable value
         :param func_name: str
