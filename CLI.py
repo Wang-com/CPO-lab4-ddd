@@ -47,7 +47,8 @@ def Help(s: str) -> str:
                               '[-hex]'
         elif s == 'usage-version':
             ret = ret + '\n get version information' \
-                              ' \nusage:python CLI_api.py [--version | -V |-v ]\n'
+                              '\nusage:'\
+                              'python CLI_api.py [--version | -V |-v ]\n'
         elif s == 'sub_commands':
             ret = ret + '\n cat a: add data to the file' \
                               ' \n cat n: create a new file\n' \
